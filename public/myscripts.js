@@ -37,7 +37,7 @@ function myFunction() {
   // Loop through all list items, and hide those who don't match the search query
   for (i = 0; i < li.length; i++) {
     a = li[i].getElementsByTagName("a")[0];
-    b = li[i].getElementsByTagName("a")[1];
+    b = li[i][1].getElementsByTagName("a")[0];
     console.log(a)
     console.log(a)
     txtValue = a.textContent || a.innerText;
@@ -62,7 +62,7 @@ function createRestaurants(a) {
     let email = document.createTextNode(e.email)
     let city = document.createTextNode(e.city)
     let restEmail = document.createElement("a")
-    let restCity = document.createElement('a')
+    let restCity = document.createElement("a")
     restEmail.setAttribute("id", "email")
     restCity.setAttribute("id", "city")
     // // robotImg.src = e.image
