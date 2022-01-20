@@ -22,8 +22,8 @@
 }
 
 body {
-    background-color: rgb(114, 51, 114);
-    background-image: url(https://i.imgur.com/gWvqkcY.png)
+    background-color: rgba(223, 27, 27, 0.767);
+    /* background-image: url(https://i.imgur.com/gWvqkcY.png) */
 }
 
 .robotCard {
@@ -47,12 +47,13 @@ body {
 .nav {
     height: 50px;
     width: 100vw;
-    background-color: #68dfb1;
+    background-color: #ffffff;
     position: fixed;
     top: 0;
     /* width: 100%; */
     z-index: 100;
     left: 0;
+    color: ;
 }
 
 img {
