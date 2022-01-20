@@ -22,7 +22,7 @@
 }
 
 body {
-    background-color: rgba(71, 71, 71, 0.767);
+    background-color: rgba(219, 0, 0, 0.767);
     /* background-image: url(https://i.imgur.com/gWvqkcY.png) */
 }
 
@@ -67,7 +67,7 @@ img {
 #myInput {
     width: 50%;
     font-size: 15px;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(241, 230, 230);
     margin-left: 40px;
     height: 30px;
 }
