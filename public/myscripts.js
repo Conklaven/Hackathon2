@@ -58,8 +58,8 @@ function createRestaurants(a) {
     let name = document.createTextNode(e.restaurant_name)
     let email = document.createTextNode(e.email)
     let city = document.createTextNode(e.city)
-    let restEmail = document.createElement("div")
-    let restCity = document.createElement('div')
+    let restEmail = document.createElement("a")
+    let restCity = document.createElement('a')
     restEmail.setAttribute("id", "email")
     restCity.setAttribute("id", "city")
     // // robotImg.src = e.image
