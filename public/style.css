@@ -34,7 +34,7 @@ body {
     height: 500px;
     margin: auto;
     margin-bottom: 30px;
-    background-image: url(https://i.imgur.com/JQ1gcq4.png);
+    /* background-image: url(https://i.imgur.com/JQ1gcq4.png); */
     border-radius: 5%;
 }
 
@@ -53,7 +53,6 @@ body {
     /* width: 100%; */
     z-index: 100;
     left: 0;
-    color: ;
 }
 
 img {

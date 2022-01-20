@@ -72,7 +72,7 @@ function createRestaurants(a) {
     // // robotImg.style.marginTop = "10px"
     // // robotImg.style.background = "darkBlue"
     restDiv.classList.add("robotCard")
-    restDiv.style.backgroundColor = "lightBlue"
+    restDiv.style.backgroundColor = "white"
     // console.log(e)
   })
 }
