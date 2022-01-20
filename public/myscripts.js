@@ -51,7 +51,7 @@ function createRestaurants(a) {
   body = document.body
   let parent = document.getElementById("myUL");
   a.forEach((e) => {
-    console.log(e)
+    console.log(e.restaurant_name)
     // let restDiv = document.createElement("li")
     // // let restImg = document.createElement("img")
     // let restName = document.createElement("a")
