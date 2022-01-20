@@ -13,7 +13,7 @@ const db =knex({
 
 const getData = () => {
     return db('restaurunts')
-    .select('restaurant_name')
+    .select('restaurant_name','city', 'email')
     .orderBy('restaurant_name')
 }
 
