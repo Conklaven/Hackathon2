@@ -51,28 +51,29 @@ function createRestaurants(a) {
   body = document.body
   let parent = document.getElementById("myUL");
   a.forEach((e) => {
-    let restDiv = document.createElement("li")
-    // let restImg = document.createElement("img")
-    let restName = document.createElement("a")
-    let name = document.createTextNode(e.restaurant_name)
-    // let email = document.createTextNode(e.email)
-    // let robotEmail = document.createElement("div")
-    // robotEmail.setAttribute("id", "email")
-    // robotImg.src = e.image
-    // robotDiv.appendChild(robotImg)
-    restName.appendChild(name)
-    // robotEmail.appendChild(email)
-    parent.appendChild(restDiv)
-    restDiv.appendChild(restName)
-    // robotDiv.appendChild(robotEmail)
-    restName.setAttribute("id", "name")
-    // robotImg.style.height = "60%"
-    // robotImg.style.margin = "auto"
-    // robotImg.style.marginTop = "10px"
-    // robotImg.style.background = "darkBlue"
-    restDiv.classList.add("robotCard")
-    restDiv.style.backgroundColor = "lightBlue"
     console.log(e)
+    // let restDiv = document.createElement("li")
+    // // let restImg = document.createElement("img")
+    // let restName = document.createElement("a")
+    // let name = document.createTextNode(e.restaurant_name)
+    // // let email = document.createTextNode(e.email)
+    // // let robotEmail = document.createElement("div")
+    // // robotEmail.setAttribute("id", "email")
+    // // robotImg.src = e.image
+    // // robotDiv.appendChild(robotImg)
+    // restName.appendChild(name)
+    // // robotEmail.appendChild(email)
+    // parent.appendChild(restDiv)
+    // restDiv.appendChild(restName)
+    // // robotDiv.appendChild(robotEmail)
+    // restName.setAttribute("id", "name")
+    // // robotImg.style.height = "60%"
+    // // robotImg.style.margin = "auto"
+    // // robotImg.style.marginTop = "10px"
+    // // robotImg.style.background = "darkBlue"
+    // restDiv.classList.add("robotCard")
+    // restDiv.style.backgroundColor = "lightBlue"
+    // console.log(e)
   })
 }
 
