@@ -47,10 +47,10 @@ function myFunction() {
 }
 
 
-function createRestaurants() {
+function createRestaurants(a) {
   body = document.body
   let parent = document.getElementById("myUL");
-  data.forEach((e) => {
+  a.forEach((e) => {
     let restDiv = document.createElement("li")
     // let restImg = document.createElement("img")
     let restName = document.createElement("a")
