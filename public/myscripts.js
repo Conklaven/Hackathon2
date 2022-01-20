@@ -71,8 +71,8 @@ function createRestaurants(a) {
     // // robotImg.style.margin = "auto"
     // // robotImg.style.marginTop = "10px"
     // // robotImg.style.background = "darkBlue"
-    // restDiv.classList.add("robotCard")
-    // restDiv.style.backgroundColor = "lightBlue"
+    restDiv.classList.add("robotCard")
+    restDiv.style.backgroundColor = "lightBlue"
     // console.log(e)
   })
 }
