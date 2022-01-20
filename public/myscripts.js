@@ -5,13 +5,13 @@ fetch('/restaurants')
     createRestaurants(data)
   })
 
-(() => {
-  body = document.body
-  let newDiv = document.createElement("ul")
-  body.appendChild(newDiv)
-  newDiv.setAttribute("id", "myUL")
-  // newDiv.style.border = '1px solid black'
-})()
+// (() => {
+//   body = document.body
+//   let newDiv = document.createElement("ul")
+//   body.appendChild(newDiv)
+//   newDiv.setAttribute("id", "myUL")
+//   // newDiv.style.border = '1px solid black'
+// })()
 
 let restaurantSearch = []
 
@@ -52,21 +52,21 @@ function createRestaurants(a) {
   let parent = document.getElementById("myUL");
   a.forEach((e) => {
     console.log(e.restaurant_name)
-    // let restDiv = document.createElement("li")
+    let restDiv = document.createElement("li")
     // // let restImg = document.createElement("img")
-    // let restName = document.createElement("a")
-    // let name = document.createTextNode(e.restaurant_name)
+    let restName = document.createElement("a")
+    let name = document.createTextNode(e.restaurant_name)
     // // let email = document.createTextNode(e.email)
     // // let robotEmail = document.createElement("div")
     // // robotEmail.setAttribute("id", "email")
     // // robotImg.src = e.image
     // // robotDiv.appendChild(robotImg)
-    // restName.appendChild(name)
+    restName.appendChild(name)
     // // robotEmail.appendChild(email)
-    // parent.appendChild(restDiv)
-    // restDiv.appendChild(restName)
+    parent.appendChild(restDiv)
+    restDiv.appendChild(restName)
     // // robotDiv.appendChild(robotEmail)
-    // restName.setAttribute("id", "name")
+    restName.setAttribute("id", "name")
     // // robotImg.style.height = "60%"
     // // robotImg.style.margin = "auto"
     // // robotImg.style.marginTop = "10px"
