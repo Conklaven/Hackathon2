@@ -121,7 +121,7 @@ function initMap() {
     // codeAddress(resturant.city, map);
 
     geocoder.geocode({ 'address': resturant.city }, function (results, status) {
-      console.log(results);
+      console.log("geocoder results for: "+resturant.city+" are "+results+", status is: "+status);
       const latLng = {lat: results[0].geometry.location.lat (), lng: results[0].geometry.location.lng ()};
       const map = new google.maps.Map(document.getElementById(divId), {
         zoom: 12,
@@ -133,9 +133,10 @@ function initMap() {
           position: latLng,
           map: map
         });
-        console.log(map);
+        console.log("set marker successfully for: "+resturant.city);
       } else {
-        alert('Geocode was not successful for the following reason: ' + status);
+        console.error("Failed setting marker for: "+resturant.city);
+        // alert('Geocode was not successful for the following reason: ' + status);
       }
     });
 
