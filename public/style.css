@@ -1,48 +1,61 @@
-#myUL {
-    display: grid;
-    flex-wrap: wrap;
-    width: 80%;
-    /* height: 100vh; */
-    text-align: center;
-    margin: auto;
-    margin-top: 100px;
-    grid-gap: 10px;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+body {
+    background-color: #db9833;
+    /* background-image: url(https://i.imgur.com/gWvqkcY.png) */
+    margin: auto 0;
+    min-height: 100%;
+    min-width: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
 
+/*#myUL {*/
+/*    display: grid;*/
+/*    !*flex-wrap: wrap;*!*/
+/*    text-align: center;*/
+/*    width: 80%;*/
+/*    float: bottom;*/
+/*    align-content: center;*/
+/*    grid-gap: 10px;*/
+/*    grid-template-columns: repeat(3, 1fr);*/
+/*    grid-template-rows: repeat(3, 1fr);*/
+/*    background-color: #f6d8ac;*/
+/*    justify-content: center;*/
+/*    padding-top: 100px;*/
+/*}*/
+ul{
+    padding-inline-start: 0;
+}
+i{
+    color: darkred;
 }
 
 #title {
-    font-family: 'SEGA LOGO FONT', sans-serif;
     float: left;
     margin-left: 30px;
     font-size: 30px;
     margin-block: 8px;
-
-}
-
-body {
-    background-color: rgba(219, 0, 0, 0.767);
-    /* background-image: url(https://i.imgur.com/gWvqkcY.png) */
 }
 
 .robotCard {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 375px;
-    height: 500px;
+    width: 45vh;
+    height: 55vh;
     margin: auto;
     margin-bottom: 30px;
     /* background-image: url(https://i.imgur.com/JQ1gcq4.png); */
     border-radius: 5%;
+    background-color: #f6d8ac;
 }
 
 #name {
-    font-size: 50px;
+    font-size: 2em;
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
 }
 #email{
     font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
 }
 .nav {
     height: 50px;
@@ -71,3 +84,20 @@ body {
     margin-left: 40px;
     height: 30px;
 }
+.restaurants{
+    display: flex;
+    flex-wrap: wrap;
+    right: 0;
+    top: 0;
+    justify-content: space-between;
+    align-content: center;
+    text-align: center;
+    width: 100%;
+    background-color: #f6d8ac;
+    padding-top: 100px;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+
+

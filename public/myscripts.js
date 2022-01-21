@@ -29,7 +29,7 @@ let restaurantArray = []
 
 function myFunction() {
   // Declare variables
-  var input, filter, ul, li, a, i, txtValue;
+  let input, filter, ul, li, a, i, txtValue;
   input = document.getElementById('myInput');
   filter = input.value.toUpperCase();
   ul = document.getElementById("myUL");
@@ -37,6 +37,7 @@ function myFunction() {
 
   // Loop through all list items, and hide those who don't match the search query
   for (i = 0; i < li.length; i++) {
+    console.log(li);
     a = li[i].getElementsByTagName("a")[0];
     txtValue = a.textContent || a.innerText;
     if (txtValue.toUpperCase().indexOf(filter) > -1) {
@@ -62,39 +63,34 @@ function createRestaurants(resturants) {
     let name = document.createTextNode(resturant.restaurant_name)
     let email = document.createTextNode(resturant.email)
     let city = document.createTextNode(resturant.city)
+    let locationIcon = document.createElement("i")
     let restEmail = document.createElement("a")
     let restCity = document.createElement("a")
     let mapDiv = document.createElement("div")
-    mapDiv.setAttribute("style", "height: 300px; width: 300px;")
+    let br = document.createElement("br")
+    mapDiv.setAttribute("style", "height: 200px; width: 200px; padding:80px")
     restEmail.setAttribute("id", "email")
     restCity.setAttribute("id", "city")
     mapDiv.setAttribute("id", "map-" + i)
     mapDiv.setAttribute("class", "classMap")
-    // mapDiv.setAttribute("width", "400");
-    // mapDiv.setAttribute("height", "270");
-
-    // let mapScript = document.createElement("script")
-    // mapScript.setAttribute("src", "https://maps.googleapis.com/maps/api/js?key=AIzaSyD1Q5VKObdCwAbLJWyN5gngRk8NP21QO7Y&callback=initMap&libraries=&v=weekly")
-    // mapScript.setAttribute("async")
-    // // robotImg.src = e.image
-    // // robotDiv.appendChild(robotImg)
-    restName.appendChild(name)
-    restCity.appendChild(city)
-    restEmail.appendChild(email)
+    locationIcon.setAttribute("class", "fa fa-fw fab fa fa-location-arrow left-icon")
     parent.appendChild(restDiv)
+    restName.appendChild(name)
+    restEmail.appendChild(email)
+    restCity.appendChild(city)
     restDiv.appendChild(restName)
-    restDiv.appendChild(restCity)
+    restDiv.appendChild(br)
     restDiv.appendChild(restEmail)
+    restDiv.appendChild(br)
+
+    restDiv.appendChild(br)
     restDiv.appendChild(mapDiv)
-    // restDiv.appendChild(mapScript)
+    restDiv.appendChild(br)
+    restDiv.appendChild(restCity)
+    restDiv.appendChild(locationIcon)
     restName.setAttribute("id", "name")
-    // // robotImg.style.height = "60%"
-    // // robotImg.style.margin = "auto"
-    // // robotImg.style.marginTop = "10px"
-    // // robotImg.style.background = "darkBlue"
     restDiv.classList.add("robotCard")
     restDiv.style.backgroundColor = "white"
-    // console.log(e)
   }
   let mapScript = document.createElement("script")
   mapScript.setAttribute("src", "https://maps.googleapis.com/maps/api/js?key=AIzaSyD1Q5VKObdCwAbLJWyN5gngRk8NP21QO7Y&callback=initMap&libraries=&v=weekly")
@@ -106,22 +102,12 @@ function initMap() {
   geocoder = new google.maps.Geocoder();
   // The location of Uluru
   let mapDivs = document.getElementsByClassName('classMap');
-  // console.log("printing map divs:");
-  // console.log(mapDivs);
-  // console.log(mapDivs.length);
 
   for(let i = 0; i < mapDivs.length; i++){
     let resturant = restaurantArray[i];
     let div = mapDivs[i];
     let divId = div.getAttribute("id");
-    // console.log(divId);
-    // const telAviv = { lat: 32.073582, lng: 34.788052 };
-    // const uluru = { lat: -25.344, lng: 131.036 };
-    // The map, centered at Uluru
-    // codeAddress(resturant.city, map);
-
     geocoder.geocode({ 'address': resturant.city }, function (results, status) {
-      console.log("geocoder results for: "+resturant.city+" are "+results+", status is: "+status);
       const latLng = {lat: results[0].geometry.location.lat (), lng: results[0].geometry.location.lng ()};
       const map = new google.maps.Map(document.getElementById(divId), {
         zoom: 12,
@@ -133,9 +119,9 @@ function initMap() {
           position: latLng,
           map: map
         });
-        console.log("set marker successfully for: "+resturant.city);
+        // console.log("set marker successfully for: "+resturant.city);
       } else {
-        console.error("Failed setting marker for: "+resturant.city);
+        // console.error("Failed setting marker for: "+resturant.city);
         // alert('Geocode was not successful for the following reason: ' + status);
       }
     });
@@ -153,7 +139,7 @@ function initMap() {
   }
 
 }
-//
+
 // function codeAddress(address, map) {
 //
 //   geocoder.geocode({ 'address': address }, function (results, status) {
@@ -173,19 +159,20 @@ function initMap() {
 // }
 
 
-// function putData(array) {
-//     // let body = document.body
-//     // let div = document.createElement('div')
-//     let select = document.getElementById('customers')
-//     // div.appendChild(body)
-//       for( key in array){
-//           let option = document.createElement('option')
-//           option.innerHTML = (array[key].first_name) + ' ' + (array[key].last_name)
-//           option.setAttribute('value', array[key].customer_id)
-//           option.setAttribute('id', (array[key].first_name) + '_' + (array[key].last_name))
-//           console.log(select)
-//           select.appendChild(option)
-//         //   console.log(array[key].country)
-//       }
+function putData(array) {
+    // let body = document.body
+    // let div = document.createElement('div')
+    let select = document.getElementById('customers')
+    // div.appendChild(body)
+      for( key in array){
+          let option = document.createElement('option')
+          option.innerHTML = (array[key].first_name) + ' ' + (array[key].last_name)
+          option.setAttribute('value', array[key].customer_id)
+          option.setAttribute('id', (array[key].first_name) + '_' + (array[key].last_name))
+          console.log(select)
+          select.appendChild(option)
+        //   console.log(array[key].country)
+      }
 
-//   }
+  }
+
