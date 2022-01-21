@@ -23,16 +23,16 @@ app.get('/home', (req, res) => {
     res.sendFile(__dirname+'/public/index.html')
    })
 
-const knex = require('knex')
-
- const db = knex({
-     client: 'pg',
-     connection: {
-        connectionString: process.env.DATABASE_URL,
-         ssl: { rejectUnauthorized: false }
-
-     }
- });
+// const knex = require('knex')
+//
+//  const db = knex({
+//      client: 'pg',
+//      connection: {
+//         connectionString: process.env.DATABASE_URL,
+//          ssl: { rejectUnauthorized: false }
+//
+//      }
+//  });
 
  app.get('/restaurants', (req, res) => {
     DB.getData()
