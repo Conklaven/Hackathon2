@@ -13,7 +13,7 @@
         <button>Return</button></a>
     </div>
     <h1 id="restaurantName"></h1>
-    <h2 id="email"></h2>
+    <a id="emailLink" href=""><h2 id="email"></h2></a>
     <h2 id="phone"></h2>
     <h2 id="cuisine"></h2>
     <p id="about"></p>
@@ -40,6 +40,7 @@
                 const response = xhr.response[0];
                 document.getElementById('restaurantName').innerHTML = response.restaurant_name
                 document.getElementById('email').innerHTML = response.email
+                document.getElementById('emailLink').href = `mailto:${response.email}`
                 document.getElementById('phone').innerHTML = response.phone
                 document.getElementById('cuisine').innerHTML = response.cuisine
                 document.getElementById('about').innerHTML = response.about
