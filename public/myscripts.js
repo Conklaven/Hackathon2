@@ -99,7 +99,7 @@ function createRestaurants(resturants) {
     restDiv.appendChild(br)
     restDiv.appendChild(restEmail)
     restDiv.appendChild(br)
-
+    restDiv.addEventListener("click", openPage)
     restDiv.appendChild(br)
     restDiv.appendChild(mapDiv)
     restDiv.appendChild(br)
@@ -184,4 +184,10 @@ function putData(array) {
       }
 
   }
+
+  function openPage(e) {
+    // console.log(e.target.innerHTML);
+    window.open(`./restaurant.html?${e.target.innerHTML}`);
+  
+    }
 

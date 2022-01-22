@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="nav">
+        <p id="title"></p>
+        <a href="/">
+        <button>Return</button></a>
+    </div>
+    <h1 id="restaurantName"></h1>
+    <h2 id="email"></h2>
+    <h2 id="phone"></h2>
+    <h2 id="cuisine"></h2>
+    <p id="about"></p>
+    <h2 id="website"></h2>
+    <h2 id="kosher"></h2>
+
+    <p id="otherData"></p>
+    <script type="text/javascript">
+        let xhr = new XMLHttpRequest();
+        function requestData() {
+            const url = window.location.href;
+            const restaurantID = url.substring(url.lastIndexOf('?') + 1, url.length);
+
+            xhr.open('GET', '/restaurant/' + restaurantID, true);
+            xhr.responseType = 'json';
+            xhr.send();
+        }
+
+        xhr.onload = function () {
+            if (xhr.status != 200) {
+                console.log('error')
+            } else {
+                console.log('success', xhr.response[0])
+                const response = xhr.response[0];
+                document.getElementById('restaurantName').innerHTML = response.restaurant_name
+                document.getElementById('email').innerHTML = response.email
+                document.getElementById('phone').innerHTML = response.phone
+                document.getElementById('cuisine').innerHTML = response.cuisine
+                document.getElementById('about').innerHTML = response.about
+                document.getElementById('website').innerHTML = response.website
+                document.getElementById('kosher').innerHTML = response.kosher
+
+
+            }
+        };
+
+        xhr.onprogress = function (event) {
+            console.log('progress', xhr)
+        }
+
+        xhr.onerror = function (event) {
+            console.log('error', xhr)
+        }
+        requestData()
+    </script>
+</body>
+</html>

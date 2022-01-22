@@ -31,3 +31,4 @@ const updateData = (restaurunt) => {
 }
 
 module.exports ={getData, getFullData, updateData}
+
