@@ -3,6 +3,8 @@ const app = express();
 const geocoder = require('google-geocoder');
 const env = require('dotenv');
 const DB = require('./modules/db');
+const DB2 = require('./modules/db2');
+
 // .config({path:});
 env.config();
 
@@ -15,6 +17,10 @@ app.use('/', express.static(__dirname+'/public'));
 app.get('/about', (req, res) => {
  res.sendFile(__dirname+'/public/about.html')
 })
+
+app.get('/restaurant', (req, res) => {
+    res.sendFile(__dirname+'/public/restaurant.html')
+   })
 
 app.get('/welcome', (req, res) => {
     res.redirect('/home')
@@ -103,3 +109,15 @@ async function getGeoCodeLocation(address){
         });
     });
 }
+
+app.get('/restaurant/:name', (req, res) => {
+    DB2.getRest(req.params.name)
+    .then(data =>{
+        res.json(data)
+        // data.forEach(e => console.log(e))
+        // res.send(data.forEach);
+    })
+    .catch(err => {
+        console.log(err)
+    })
+})
