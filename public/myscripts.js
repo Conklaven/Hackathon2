@@ -29,23 +29,38 @@ let restaurantArray = []
 
 function myFunction() {
   // Declare variables
-  let input, filter, ul, li, a, i, txtValue;
+  let input, filter;
   input = document.getElementById('myInput');
   filter = input.value.toUpperCase();
-  ul = document.getElementById("myUL");
-  li = ul.getElementsByTagName('li');
 
-  // Loop through all list items, and hide those who don't match the search query
-  for (i = 0; i < li.length; i++) {
-    console.log(li);
-    a = li[i].getElementsByTagName("a")[0];
-    txtValue = a.textContent || a.innerText;
-    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      li[i].style.display = "";
+  let gridDivs = document.getElementsByClassName('gridDiv');
+
+  for(let i = 0; i < gridDivs.length; i++) {
+    let resturant = restaurantArray[i];
+    let resturantName = resturant.restaurant_name;
+    let div = gridDivs[i];
+
+    if (resturantName.toUpperCase().indexOf(filter) > -1) {
+      div.style.display = "";
     } else {
-      li[i].style.display = "none";
+      div.style.display = "none";
     }
   }
+  // ul = document.getElementById("myUL");
+  // li = ul.getElementsByTagName('li');
+  // console.log(li)
+  //
+  // // Loop through all list items, and hide those who don't match the search query
+  // for (i = 0; i < li.length; i++) {
+  //   console.log(li);
+  //   a = li[i].getElementsByTagName("a")[0];
+  //   txtValue = a.textContent || a.innerText;
+  //   if (txtValue.toUpperCase().indexOf(filter) > -1) {
+  //     li[i].style.display = "";
+  //   } else {
+  //     li[i].style.display = "none";
+  //   }
+  // }
 }
 
 
@@ -56,8 +71,10 @@ function createRestaurants(resturants) {
   // a.forEach((e) => {
   for(let i = 0; i < restaurantArray.length; i++){
     let resturant = restaurantArray[i];
+    // let resturantId = resturant.re
     // console.log(e.restaurant_name)
     let restDiv = document.createElement("li")
+    restDiv.setAttribute("class", "gridDiv")
     // // let restImg = document.createElement("img")
     let restName = document.createElement("a")
     let name = document.createTextNode(resturant.restaurant_name)
