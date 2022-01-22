@@ -126,7 +126,7 @@ function initMap() {
     let divId = div.getAttribute("id");
     const latLng = {lat: resturant.lat, lng: resturant.lng};
     const map = new google.maps.Map(document.getElementById(divId), {
-      zoom: 12,
+      zoom: 15,
       center: latLng,
     });
     const marker = new google.maps.Marker({
