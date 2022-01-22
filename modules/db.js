@@ -13,8 +13,21 @@ const db =knex({
 
 const getData = () => {
     return db('restaurunts')
-    .select('restaurant_name','city', 'email')
+    .select('restaurant_name','city', 'email', 'restaurant_id', 'lat', 'lng')
     .orderBy('restaurant_name')
 }
 
-module.exports ={getData}
+const getFullData = () => {
+    return db('restaurunts')
+        .select('*')
+}
+
+const updateData = (restaurunt) => {
+    return db('restaurunts')
+        .insert(restaurunt)
+        .onConflict("restaurant_id")
+        .merge()
+        .returning("*");
+}
+
+module.exports ={getData, getFullData, updateData}

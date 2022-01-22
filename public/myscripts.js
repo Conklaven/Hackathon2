@@ -124,24 +124,16 @@ function initMap() {
     let resturant = restaurantArray[i];
     let div = mapDivs[i];
     let divId = div.getAttribute("id");
-    geocoder.geocode({ 'address': resturant.city }, function (results, status) {
-      const latLng = {lat: results[0].geometry.location.lat (), lng: results[0].geometry.location.lng ()};
-      const map = new google.maps.Map(document.getElementById(divId), {
-        zoom: 12,
-        center: latLng,
-      });
-
-      if (status == 'OK') {
-        const marker = new google.maps.Marker({
-          position: latLng,
-          map: map
-        });
-        // console.log("set marker successfully for: "+resturant.city);
-      } else {
-        // console.error("Failed setting marker for: "+resturant.city);
-        // alert('Geocode was not successful for the following reason: ' + status);
-      }
+    const latLng = {lat: resturant.lat, lng: resturant.lng};
+    const map = new google.maps.Map(document.getElementById(divId), {
+      zoom: 12,
+      center: latLng,
     });
+    const marker = new google.maps.Marker({
+      position: latLng,
+      map: map
+    });
+
 
     // const map = new google.maps.Map(document.getElementById(divId), {
     //   zoom: 2,
