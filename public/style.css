@@ -36,7 +36,7 @@ i{
 }
 
 .robotCard {
-    display: flex;
+    display: grid;
     flex-wrap: wrap;
     justify-content: center;
     width: 45vh;

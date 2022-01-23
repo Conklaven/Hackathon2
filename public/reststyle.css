@@ -1,0 +1,19 @@
+body {
+    background-color: #db9833;
+    /* background-image: url(https://i.imgur.com/gWvqkcY.png) */
+    margin: auto 0;
+    min-height: 100%;
+    min-width: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nav {
+    height: 50px;
+    width: 100vw;
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    /* width: 100%; */
+    z-index: 100;
+    left: 0;
+}
