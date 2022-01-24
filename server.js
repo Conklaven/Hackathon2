@@ -4,7 +4,7 @@ const geocoder = require('google-geocoder');
 const env = require('dotenv');
 const DB = require('./modules/db');
 const DB2 = require('./modules/db2');
-var cors = require('cors')
+const cors = require('cors');
 
 // .config({path:});
 env.config();
