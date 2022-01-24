@@ -124,3 +124,15 @@ app.get('/restaurant/:name', (req, res) => {
         console.log(err)
     })
 })
+
+app.get('/rest/:name', (req, res) => {
+    DB2.getRest(req.params.name)
+    .then(data =>{
+        res.json(data)
+        // data.forEach(e => console.log(e))
+        // res.send(data.forEach);
+    })
+    .catch(err => {
+        console.log(err)
+    })
+})

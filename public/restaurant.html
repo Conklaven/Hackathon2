@@ -26,8 +26,10 @@
 </div>
     <script type="text/javascript">
         let xhr = new XMLHttpRequest();
+        console.log(xhr)
         function requestData() {
             const url = window.location.href;
+            console.log(url);
             const restaurantID = url.substring(url.lastIndexOf('?') + 1, url.length);
 
             xhr.open('GET', '/restaurant/' + restaurantID, true);
