@@ -9,6 +9,8 @@ var cors = require('cors')
 // .config({path:});
 env.config();
 
+app.use(cors());
+
 app.listen(process.env.PORT, ()=>{
     console.log(`listening on port ${process.env.PORT}`);
 })
